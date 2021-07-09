@@ -1,11 +1,12 @@
-const { client, config } = require(`../../utils`);
+const client = require(`../../utils/client`);
+const config = require(`../../utils/config`);
 const { InternalServerError } = require(`restify-errors`);
 
-exports.submit = (assessment) => new Promise((resolve, reject) => {
-  // this function sends a request to the API
-  // finish the logic to handle the response when returned from the API
-  client.METHOD(`/some-url`,
-    (err, req, res, body) => {
+exports.submit = (formatted_assessment) => new Promise((resolve, reject) => {
+
+  client.post(`/assessment/submit`,
+    { formatted_assessment }, (err, req, res, body) => {
+
       if (err) {
         return reject(err);
       }
@@ -21,7 +22,7 @@ exports.submit = (assessment) => new Promise((resolve, reject) => {
 exports.getList = () => new Promise((resolve, reject) => {
   // this function sends a request to the API
   // finish the logic to handle the response when returned from the API
-  client.METHOD(`/some-url`,
+  client.get(`/some-url`,
     (err, req, res, body) => {
       if (err) {
         return reject(err);
