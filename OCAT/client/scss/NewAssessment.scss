@@ -1,0 +1,35 @@
+
+
+label {
+  float: left;
+  clear: none;
+  display: block;
+  padding-bottom: 15px;
+}
+
+input[type=radio],
+input.radio {
+  float: left;
+  clear: none;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+input, label {
+  clear: both;
+}
+
+h2 {
+  padding-bottom: 25px;
+  text-align: left;
+  color: black;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+Button {
+  position:absolute;
+  transition: .5s ease;
+  top: 100%;
+  left: 30%;
+}
