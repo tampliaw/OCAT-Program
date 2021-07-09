@@ -11,7 +11,7 @@ module.exports = server => {
       try {
         const { formatted_assessment } = req.params;
         console.log(formatted_assessment);
-        AssessmentService.submit(formatted_assessment);
+        await AssessmentService.submit(formatted_assessment);
 
         ResponseHandler(
           res,

@@ -2,9 +2,10 @@ const { Assessments } = require(`../Database`);
 
 exports.submit = async (formatted_assessment) => {
 
-  Assessments.forge(formatted_assessment).save().then((a) => {
+  const returnAssessment = await Assessments.forge(formatted_assessment).save().then((a) => {
     console.log(`Assessment Saved`, a.get());
   });
+  return returnAssessment;
 };
 
 exports.getList = () => {
