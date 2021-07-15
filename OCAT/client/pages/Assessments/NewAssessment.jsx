@@ -13,7 +13,6 @@ export const NewAssessment = () => {
     const values = Object.values(assessment).map(score => Number(score));
     const total_score = sum(values);
 
-
     let risk_level;
     switch (total_score) {
       case 0:
@@ -56,11 +55,11 @@ export const NewAssessment = () => {
       </div>
 
       <label htmlFor="Question">1. Previous contact with the Cat Judicial System?</label>
-      <label htmlFor="Response1">Yes (score = 0)
-        <input {...register(`Question 1`, { required: true })} type="radio" id="Response1" value={0} />
+      <label htmlFor="Response1">Yes (score = 1)
+        <input {...register(`Question 1`, { required: true })} type="radio" id="Response1" value={1} />
       </label>
-      <label htmlFor="Response2">No (score = 1)
-        <input {...register(`Question 1`, { required: true })} type="radio" id="Response2" value={1} />
+      <label htmlFor="Response2">No (score = 0)
+        <input {...register(`Question 1`, { required: true })} type="radio" id="Response2" value={0} />
       </label>
 
       <label htmlFor="Question">2. Physical altercations with other cats?</label>

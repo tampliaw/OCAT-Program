@@ -10,10 +10,12 @@ router.post(`/submit`, (req, res, next) => {
   }
 });
 
-router.get(`/getList`, (req, res, next) => {
+router.get(`/list`, async (req, res, next) => {
   try {
-    // call the getList function from the server/libs/AssessmentService
-    // return assessments to front-end
+    const assessments = await AssessmentService.getList();
+    console.log(assessments);
+    res.json(assessments);
+
   } catch (error) {
     next(error);
   }
