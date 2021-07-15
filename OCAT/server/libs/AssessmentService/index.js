@@ -22,8 +22,9 @@ exports.submit = (formatted_assessment) => new Promise((resolve, reject) => {
 exports.getList = () => new Promise((resolve, reject) => {
   // this function sends a request to the API
   // finish the logic to handle the response when returned from the API
-  client.get(`/some-url`,
+  client.get(`/assessment/list`,
     (err, req, res, body) => {
+
       if (err) {
         return reject(err);
       }
@@ -32,6 +33,6 @@ exports.getList = () => new Promise((resolve, reject) => {
         return reject(new InternalServerError(`Request Error`));
       }
 
-      resolve(body.data);
+      resolve(body.data.assessments);
     });
 });
